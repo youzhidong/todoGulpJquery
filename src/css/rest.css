@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:#00334b;
+    color: #fff;
+}
+h1,p,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+ul{
+    padding:0;
+}
+li{
+    list-style: none;
+}
+.container{
+    width: 680px;
+    margin: 20px auto;
+}
