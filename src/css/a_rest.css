@@ -13,6 +13,9 @@ ul{
 li{
     list-style: none;
 }
+input,textarea{
+    outline: none;
+}
 .container{
     width: 680px;
     margin: 20px auto;

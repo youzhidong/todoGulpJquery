@@ -20,6 +20,30 @@ gulp.task("jquery",function(){
         .pipe(gulp.dest( app.distPath+'lib/jquery'))  //生产环境
 });
 
+//编写任务
+gulp.task("store",function(){
+    // 将你的默认的任务代码放在这
+    gulp.src('bower_components/store2/dist/*.js')
+        .pipe(gulp.dest(app.buildPath+'lib/store2')) //开发环境
+        .pipe(gulp.dest( app.distPath+'lib/store2'))  //生产环境
+});
+
+//编写任务
+gulp.task("datetime",function(){
+    // 将你的默认的任务代码放在这
+    gulp.src('bower_components/jquery-datetime-picker-bygiro/dist/*.js')
+        .pipe(gulp.dest(app.buildPath+'lib/jquery-datetime-picker-bygiro')) //开发环境
+        .pipe(gulp.dest( app.distPath+'lib/jquery-datetime-picker-bygiro'))  //生产环境
+});
+
+//复制music
+gulp.task("music",function(){
+    // 将你的默认的任务代码放在这
+    gulp.src(app.srcPath+'music/*')
+        .pipe(gulp.dest(app.buildPath+'music')) //开发环境
+        .pipe(gulp.dest( app.distPath+'music'))  //生产环境
+});
+
 //压缩图片
 gulp.task("imgMin",function(){
     gulp.src(app.srcPath+"images/*")
@@ -68,7 +92,7 @@ gulp.task("clear",function(){
 
 
 //总的任务
-gulp.task("build",['jquery','js','imgMin','html','css']);
+gulp.task("build",['jquery','js','imgMin','html','css',"music",'store','datetime']);
 
 
 //自动执行，生成http
